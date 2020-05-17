@@ -10,7 +10,6 @@ type Object struct {
 	gtaItem.Object
 	Breakable   string `json:"breakable"`
 	Collisions  string `json:"collisions"`
-	Model       string `json:"model"`
 	Doublesided string `json:"doublesided"`
 	Scale       string `json:"scale"`
 }

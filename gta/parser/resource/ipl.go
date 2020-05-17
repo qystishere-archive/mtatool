@@ -136,7 +136,7 @@ func (i *IPL) Add(it item.Item) error {
 
 func (i *IPL) Compile() string {
 	var b strings.Builder
-	b.WriteString(shared.FilePrefix)
+	b.WriteString(shared.FilePrefix + shared.CRLF)
 	for _, name := range itemsOrder {
 		m, ok := i.items[name]
 		if !ok {

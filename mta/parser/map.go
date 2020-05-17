@@ -49,7 +49,6 @@ func LoadMap(path string) (*Map, error) {
 			put := func(valuesMap map[string]interface{}) {
 				for k, v := range valuesMap {
 					valuesMap[strings.TrimLeft(k, "-")] = v
-					delete(valuesMap, k)
 				}
 				valuesMap["type"] = k
 				valuesMaps = append(valuesMaps, valuesMap)
@@ -74,7 +73,6 @@ func LoadMap(path string) (*Map, error) {
 			if err != nil {
 				return nil, err
 			}
-			fmt.Println(string(bb))
 
 			var i gtaItem.Item
 			switch gtaItem.Type(valuesMap["type"].(string)) {

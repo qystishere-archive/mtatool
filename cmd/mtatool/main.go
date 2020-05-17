@@ -12,6 +12,7 @@ import (
 	"github.com/qystishere/mtatool/gta"
 	"github.com/qystishere/mtatool/gta/parser/resource"
 	"github.com/qystishere/mtatool/mta"
+	mtaItem "github.com/qystishere/mtatool/mta/parser/item"
 )
 
 var config struct {
@@ -78,6 +79,10 @@ func main() {
 		}
 
 		for _, item := range m.Items {
+			switch item := item.(type) {
+			case mtaItem.Object:
+				fmt.Println(item.Type(), item.ModelID, item.ModelID)
+			}
 			if err := ipl.Add(item); err != nil {
 				log.WithError(err).
 					Warnf("Can't add item (%s)", item.Type())
