@@ -1,0 +1,10 @@
+gta:
+  path: 'C:\GTA SA'
+mta:
+  path: 'C:\MTA San Andreas 1.5'
+  maps:
+    # include: ['']
+    # exclude: ['']
+    only: ['test.map']
+    # Sync with gta sa map
+    sync: true
